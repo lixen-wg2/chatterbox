@@ -68,7 +68,7 @@ sends_incomplete_connection_preface(_Config) ->
     {ok, _ConnectionInfo} = ssl:connection_information(Socket),
 
     %% There's a 5 second timeout before the socket will be closed
-    ssl:recv(Socket, 0, 5000),
+    ssl:recv(Socket, 0, 6000),
 
     {error, _} = ssl:send(Socket, <<"something else">>),
     {error, _} = ssl:connection_information(Socket),
